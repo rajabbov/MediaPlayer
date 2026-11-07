@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/obsidian_black">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_bg" />
+
+    <TextView
+        android:id="@+id/dashboardTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="CORE_DASHBOARD"
+        android:textColor="@color/neon_cyan"
+        android:textSize="12sp"
+        android:letterSpacing="0.4"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/libraryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Your Library"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dashboardTitle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/musicRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/libraryText" />
+
+    <!-- Floating Mini Player (Glassmorphism) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/miniPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@color/glass_white"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="20dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/glass_border"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/miniArt"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_music"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/miniTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:text="Initializing..."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/miniPlayPause"
+                app:layout_constraintStart_toEndOf="@+id/miniArt"
+                app:layout_constraintTop_toTopOf="@+id/miniArt" />
+
+            <TextView
+                android:id="@+id/miniArtist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Awaiting Data"
+                android:textColor="@color/neon_magenta"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/miniPlayPause"
+                app:layout_constraintStart_toStartOf="@+id/miniTitle"
+                app:layout_constraintTop_toBottomOf="@+id/miniTitle" />
+
+            <ImageButton
+                android:id="@+id/miniPlayPause"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_play"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/neon_cyan" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

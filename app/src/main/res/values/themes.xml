@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.MediaPlayer" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/obsidian_black</item>
+        <item name="colorPrimary">@color/neon_cyan</item>
+        <item name="colorSecondary">@color/neon_magenta</item>
+        <item name="android:statusBarColor">@color/obsidian_black</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.MediaPlayer" parent="Base.Theme.MediaPlayer" />
+
+    <style name="GlassCard" parent="">
+        <item name="cardBackgroundColor">@color/glass_white</item>
+        <item name="cardElevation">8dp</item>
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+
+    <style name="RoundedImageView" parent="">
+        <item name="cornerSize">12dp</item>
+    </style>
+</resources>
